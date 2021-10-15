@@ -12,7 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "eslint": "^8.0.1",
-    "jest": "^27.2.5",
     "socket.io": "^4.3.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.5",
+    "ts-jest": "^27.0.6"
   }
 }
