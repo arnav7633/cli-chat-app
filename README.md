@@ -12,5 +12,11 @@ Step 2 - Run `npm i`
 Step 3 - Rename `.env.example` to `.env` in the source folder and add the conection string to your mongo db server  
 Step 4 - Run `ts-node tests/index.ts`  
 
-# Why use this manager insteaad of the popular trusted ones like 1password  
+# Why use this manager insteaad of the popular trusted ones
 Those software don't make you the power user. They have a centralized system which means 1 leak is resulting in leak of all user data. Whereas my open source software gives u full control of the core, has unique encryption keys for everyone  , and stores data in user provided databases ensuring a leak doesn't compromise everyone
+
+# Images
+
+https://cdn.discordapp.com/attachments/795350793212788747/899937514012413972/unknown.png
+
+https://cdn.discordapp.com/attachments/795350793212788747/899937514012413972/unknown.png
