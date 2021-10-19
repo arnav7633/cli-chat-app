@@ -17,5 +17,5 @@ Those software don't make you the power user. They have a centralized system whi
 
 # Images
 
-<img src="![image](https://user-images.githubusercontent.com/68459855/137897773-65048143-4133-4354-9487-b12dabeeec4a.png)
-"/>
+![image](https://user-images.githubusercontent.com/68459855/137897773-65048143-4133-4354-9487-b12dabeeec4a.png)
+
