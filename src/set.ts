@@ -1,12 +1,18 @@
 const Cryptr = require("cryptr");
 import { readFileSync } from "fs";
 import schema from "./models/password";
+
+interface main {
+  encryptionKey: string;
+  encrypter: any;
+}
 class main {
-  constructor() {}
+  constructor() {
+    const encryptionKey = readFileSync("./src/key.txt", { encoding: "utf-8" });
+    this.encrypter = new Cryptr(encryptionKey.toString());
+  }
   set(password: string, website: string) {
-    const encryptionKey = readFileSync("./src/key.txt");
-    const encrypter = new Cryptr(encryptionKey.toString());
-    const encrypted = encrypter.encrypt(password);
+    const encrypted = this.encrypter.encrypt(password);
     schema
       .findOneAndUpdate(
         {

@@ -4,6 +4,7 @@ import encryptHandling from "./set";
 import { readFileSync, writeFileSync } from "fs";
 import { randomBytes } from "crypto";
 import DB from "./database";
+import decrypt from "./decrypt";
 
 require("dotenv-safe").config({
   path: __dirname + "/.env",
@@ -16,6 +17,7 @@ interface selection {
 
 interface main {
   encryptHandling: encryptHandling;
+  decryptHandling: decrypt;
 }
 class main {
   constructor() {
@@ -23,11 +25,12 @@ class main {
     try {
       const currentKey = readFileSync("./src/key.txt");
     } catch (e) {
-      const encryptedKey = randomBytes(128).toString("hex");
+      const encryptedKey = randomBytes(64).toString("hex");
       writeFileSync("./src/key.txt", encryptedKey);
     }
     this.init();
     this.encryptHandling = new encryptHandling();
+    this.decryptHandling = new decrypt();
   }
 
   async init() {
@@ -46,6 +49,16 @@ class main {
         },
       ]);
       this.encryptHandling.set(password.password, password.website);
+    }
+    if (op === "Retrieve a password") {
+      const password: any = await inquirer.prompt([
+        {
+          message: "Enter the website name",
+          type: "input",
+          name: "website",
+        },
+      ]);
+      this.decryptHandling.get(password.website);
     }
   }
   async getOP() {
