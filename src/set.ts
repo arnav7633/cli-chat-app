@@ -11,14 +11,16 @@ class main {
     const encryptionKey = readFileSync("./src/key.txt", { encoding: "utf-8" });
     this.encrypter = new Cryptr(encryptionKey.toString());
   }
-  set(password: string, website: string) {
+  set(password: string, website: string, username: string) {
     const encrypted = this.encrypter.encrypt(password);
     schema
       .findOneAndUpdate(
         {
+          username: username,
           website: website,
         },
         {
+          username: username,
           password: encrypted,
         },
         {

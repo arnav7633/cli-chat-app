@@ -17,8 +17,10 @@ class Decrypt {
       website: website,
     });
     if (!data) return console.log("No password found!");
-    const encrypted = this.encrypter.decrypt(data.password);
-    console.log(encrypted);
+    const deencrypted = this.encrypter.decrypt(data.password);
+    console.log(
+      `Password for ${website} with the username ${data.username} is ${deencrypted}`
+    );
     process.exit(0);
   }
 }

@@ -43,12 +43,21 @@ class main {
           name: "website",
         },
         {
+          message: "Enter your username",
+          type: "input",
+          name: "username",
+        },
+        {
           message: "Enter your password",
           type: "password",
           name: "password",
         },
       ]);
-      this.encryptHandling.set(password.password, password.website);
+      this.encryptHandling.set(
+        password.password,
+        password.website,
+        password.username
+      );
     }
     if (op === "Retrieve a password") {
       const password: any = await inquirer.prompt([
