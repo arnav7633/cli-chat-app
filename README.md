@@ -12,7 +12,7 @@ Step 2 - Run `npm i`
 Step 3 - Rename `.env.example` to `.env` in the source folder and add the conection string to your mongo db server  
 Step 4 - Run `ts-node tests/index.ts`  
 
-# Why use this manager insteaad of the popular trusted ones
+# Why use this manager instead of the popular trusted ones
 Those software don't make you the power user. They have a centralized system which means 1 leak is resulting in leak of all user data. Whereas my open source software gives u full control of the core, has unique encryption keys for everyone  , and stores data in user provided databases ensuring a leak doesn't compromise everyone
 
 # Images
