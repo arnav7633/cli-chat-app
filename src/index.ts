@@ -1,4 +1,3 @@
-"use-strict";
 import * as inquirer from "inquirer";
 import encryptHandling from "./set";
 import { readFileSync, writeFileSync } from "fs";
@@ -23,7 +22,7 @@ class main {
   constructor() {
     new DB();
     try {
-      const currentKey = readFileSync("./src/key.txt");
+      readFileSync("./src/key.txt");
     } catch (e) {
       const encryptedKey = randomBytes(64).toString("hex");
       writeFileSync("./src/key.txt", encryptedKey);
